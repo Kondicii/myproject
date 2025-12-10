@@ -28,6 +28,8 @@ function updateCart() {
 
     totalPrice.textContent = total;
     cartCount.textContent = cart.length;
+mobileCartCount.textContent = cart.length;
+
 }
 
 cartBtn.onclick = () => cartModal.style.display = "flex";
@@ -97,4 +99,11 @@ overlay.addEventListener('click', closeMenu);
 document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
+const mobileCartBtn = document.getElementById("mobile-cart-btn");
+const mobileCartCount = document.getElementById("mobile-cart-count");
+
+mobileCartBtn.addEventListener("click", () => {
+    cartModal.style.display = "flex";
+});
+
 
