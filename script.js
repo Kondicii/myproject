@@ -75,3 +75,26 @@ function applyFilters() {
 
 typeFilter.onchange = applyFilters;
 priceFilter.onchange = applyFilters;
+
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+const overlay = document.getElementById('overlay');
+
+function closeMenu() {
+    burger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+});
+
+overlay.addEventListener('click', closeMenu);
+
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
